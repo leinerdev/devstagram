@@ -28,13 +28,15 @@
         </div>
     </header>
     <main class="pt-10 flex justify-center">
-        <img src="https://www.instagram.com/static/images/homepage/phones/home-phones.png/1dc085cdb87d.png"
-            alt="">
+        <img class="sm:hidden lg:block" src="{{ asset('img/Devstagram.png') }}"
+            alt="Devstagram">
         <article class="flex flex-col gap-2">
             <div class="bg-white pt-11 pl-9 pr-9 h-5/ shadow flex flex-col items-center">
                 <h1 id="title" class="text-4xl text-center font-medium">Devstagram</h1>
                 <p class="w-64 mt-4 text-center font-bold text-gray-500 leading-5">@yield('titulo')</p>
+                {{-- Formulario --}}
                 <div>@yield('form')</div>
+                {{--  --}}
                 <div>@yield('login')</div>
             </div>
             <div>@yield('card-footer-label')</div>

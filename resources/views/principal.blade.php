@@ -10,10 +10,10 @@
 
 @section('form')
     <div class="flex flex-col mt-10 gap-2">
-        <input class="bg-gray-100 w-72 h-9 pl-2 text-sm rounded" type="text"
+        <input class="border outline-none bg-gray-100 w-72 h-9 pl-2 text-sm rounded" type="text"
             placeholder="Teléfono, usuario o correo electrónico">
-        <input class="bg-gray-100 w-72 h-9 pl-2 text-sm rounded" type="password" placeholder="Contraseña">
-        <button class="bg-sky-500 text-white mt-4 p-1 rounded font-bold text-sm">@yield('button-label')</button>
+        <input class="border outline-none bg-gray-100 w-72 h-9 pl-2 text-sm rounded" type="password" placeholder="Contraseña">
+        <button class="bg-sky-500 hover:bg-sky-600 transition-all text-white mt-4 p-1 rounded font-bold text-sm">@yield('button-label')</button>
     </div>
 @endsection
 
