@@ -8,15 +8,28 @@
                 <h1 id="title" class="text-4xl text-center font-medium">Devstagram</h1>
                 <p class="w-64 mt-4 text-center font-bold text-gray-500 leading-5">Login</p>
                 {{-- Formulario --}}
-                <div class="flex flex-col mt-10 gap-2">
-                    <input class="border outline-none bg-gray-100 w-72 h-9 pl-2 text-sm rounded" type="text"
-                        placeholder="Teléfono, usuario o correo electrónico">
-                    <input class="border outline-none bg-gray-100 w-72 h-9 pl-2 text-sm rounded" type="password"
-                        placeholder="Contraseña">
-                    <button
-                        class="bg-sky-500 hover:bg-sky-600 transition-all text-white mt-4 p-1 rounded font-bold text-sm">Iniciar
-                        sesión</button>
-                </div>
+                <form action="{{ route('login') }}" method="POST" novalidate>
+                    @csrf
+                    @if (session('mensaje'))
+                        <span class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ session('mensaje') }}</span>
+                    @endif
+                    <div class="flex flex-col mt-10 gap-2">
+                        <input class="border outline-none bg-gray-100 w-72 h-9 pl-2 text-sm rounded" type="text"
+                            placeholder="Teléfono, usuario o correo electrónico" id="email" name="email"
+                            type="email">
+                        @error('email')
+                            <span class="text-red-500 mb-2 rounded-lg text-sm text-left">{{ $message }}</span>
+                        @enderror
+                        <input class="border outline-none bg-gray-100 w-72 h-9 pl-2 text-sm rounded" type="password"
+                            placeholder="Contraseña" id="password" name="password">
+                        @error('password')
+                            <span class="text-red-500 mb-2 rounded-lg text-sm text-left">{{ $message }}</span>
+                        @enderror
+                        <button
+                            class="bg-sky-500 hover:bg-sky-600 transition-all text-white mt-4 p-1 rounded font-bold text-sm">Iniciar
+                            sesión</button>
+                    </div>
+                </form>
                 <div class="flex gap-4 justify-center items-center text-gray-400 mt-4">
                     <hr width="100%" class="h-1">
                     O

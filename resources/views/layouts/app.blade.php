@@ -18,7 +18,7 @@
 </style>
 
 <body class="bg-gray-100">
-    <header class="p-5 border-b bg-white shadow">
+    <header class="p-5 border-b bg-white shadow w-full">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black">Devstagram</h1>
             <nav class="flex gap-4">
@@ -27,30 +27,7 @@
             </nav>
         </div>
     </header>
-    <main class="pt-10 flex justify-center">
-        <img class="sm:hidden lg:block" src="{{ asset('img/Devstagram.png') }}"
-            alt="Devstagram">
-        <article class="flex flex-col gap-2">
-            <div class="bg-white pt-11 pl-9 pr-9 h-5/ shadow flex flex-col items-center">
-                <h1 id="title" class="text-4xl text-center font-medium">Devstagram</h1>
-                <p class="w-64 mt-4 text-center font-bold text-gray-500 leading-5">@yield('titulo')</p>
-                {{-- Formulario --}}
-                <div>@yield('form')</div>
-                {{--  --}}
-                <div>@yield('login')</div>
-            </div>
-            <div>@yield('card-footer-label')</div>
-            <span class="flex justify-center mt-3 text-gray-700 text-sm">Descarga la app.</span>
-            <div class="flex justify-center gap-1 mt-3">
-                <img class="cursor-pointer"
-                    src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_spanish_latinamerica_mexico.png/e2247c4f90de.png"
-                    width="130px" alt="">
-                <img class="cursor-pointer"
-                    src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_spanish_latinamerica_mexico-es_LA.png/3cd8a27083c0.png"
-                    width="130px" alt="">
-            </div>
-        </article>
-    </main>
+    <main @yield('contenido')></main>
     <footer class="flex justify-center items-center pl-9 pr-9 pt-9 pb-14 flex-col text-xs text-gray-500 font-normal">
         <nav class="flex gap-4">
             <a href="">Meta</a>
